@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teman Tongkrongan - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 5;
+      padding:5;
+    }
+
+    body
+     {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #91a1f1, #300b6c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: rgb(255, 255, 255);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 320px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #000000;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #000000;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-container button:hover {
+      background: #e6821e;
+    }
+
+    .error-message {
+      margin-top: 10px;
+      color: rgb(0, 0, 0);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Demonic Fearless JOKI RANK MLBB</h2>
+    <form onsubmit="return loginUser(event)">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Masuk</button>
+      <p class="error-message" id="error-message"></p>
+    </form>
+  </div>
+
+  <script>
+    function loginUser(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'asep' && password === '1234') {
+        window.location.href = 'halaman2.html';
+      } else {
+        document.getElementById('error-message').textContent = 'Masukkan Username atau password dengan benar.';
+      }
+    }
+  </script>
+</body>
+</html>
